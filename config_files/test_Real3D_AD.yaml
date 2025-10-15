@@ -1,0 +1,22 @@
+seed: 42
+device: cuda
+dataset:
+  name: Real3D_AD
+  dataset_dir: /home/dataset/liwq/datasets/Real3D-AD-PCD
+  cls_name: [
+    "airplane","car","candybar","chicken",
+    "diamond","duck","fish","gemstone",
+    "seahorse","shell","starfish","toffees"
+    ]
+  normalize: True
+  scale_factor: 17.744022369384766  
+  template_path: data/Real3D_AD
+
+infer:
+  batch_size: 1
+  num_workers: 0
+  top_k: 1000
+  shuffle: False
+  checkpoint_path: results/Real3D_AD/runs_sdf/13_10_104453
+  output_dir: results/Real3D_AD/13_10_104453/outputs
+  settings_path: results/Real3D_AD/runs_sdf/13_10_104453/settings.yaml
