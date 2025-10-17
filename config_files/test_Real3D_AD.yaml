@@ -1,0 +1,24 @@
+seed: 42
+device: cuda
+dataset:
+  name: Real3D_AD
+  dataset_dir: path/to/Real3D-AD-PCD
+  cls_name: [
+    "airplane","car","candybar","chicken",
+    "diamond","duck","fish","gemstone",
+    "seahorse","shell","starfish","toffees"
+    ]
+  normalize: True
+  scale_factor: 17.744022369384766  
+  template_path: data/Real3D_AD
+
+infer:
+  batch_size: 1
+  num_workers: 0
+  voxel_size: 0.03
+  top_k: 1000
+  shuffle: False
+  cd_threshold: 1.8
+  checkpoint_path: results/Real3D_AD/runs_sdf/
+  output_dir: results/Real3D_AD/runs_sdf/outputs
+  settings_path: results/Real3D_AD/runs_sdf/settings.yaml
