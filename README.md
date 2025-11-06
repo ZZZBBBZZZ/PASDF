@@ -104,7 +104,7 @@ python data/extract_sdf_ShapeNetAD.py
 Configuration: `config_files/train_sdf_ShapeNetAD.yaml`
 
 ```bash
-python Train/train_sdf_ShapeNetAD.py.py
+python Train/train_sdf_ShapeNetAD.py
 ```
 
 #### **Step 3 — Evaluate**

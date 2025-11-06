@@ -87,77 +87,7 @@ class Dataset_ShapeNetAD_test(Dataset):
             
         verts = self.rotate_pointcloud(verts_original, [np.pi/2, 0, -np.pi/2])
         return verts
-    # def _reorder_labels(self,label_path, anomaly_path_pcd):
-    #     """
-    #     重新排序标签以匹配点云中的点顺序。
 
-    #     :param label_path: 标签文件的路径，文件应为 CSV 格式，标签在最后一列。
-    #     :param anomaly_path_pcd: 点云文件的路径。
-    #     :return: 重新排序后的标签数组。
-    #     """
-    #     if "vase" in label_path:
-    #         num_round = 7
-    #     else:
-    #         num_round = 6
-
-    #     # 加载点云
-    #     # pcd = o3d.io.read_point_cloud(anomaly_path_pcd)
-    #     pcd_points = anomaly_path_pcd
-    #     # print(pcd_points)
-    #     pcd_points_rounded = np.round(pcd_points, num_round)  # 四舍五入到六位小数
-
-    #     # 加载标签
-    #     try:
-    #         label_data = np.loadtxt(label_path, delimiter=' ')  # 假设标签文件是 CSV 格式
-    #     except ValueError as e:
-    #         print(f"Error loading label file {label_path}: {e}")
-    #         return np.array([])  # 或者抛出异常
-
-    #     # 加载标签
-    #     # label_data = np.loadtxt(label_path, delimiter=',')
-    #     label_points = label_data[:, :-1]  # 假设标签前面的列是坐标
-    #     labels = label_data[:, -1]  # 假设标签在最后一列
-
-    #     # label_points_rounded = arrayround(label_points, num_round)
-    #     label_points_rounded = np.round(label_points, num_round)  # 四舍五入到六位小数
-
-
-
-    #     # 创建一个查找表，以点云点为键，标签为值
-    #     label_dict = {tuple(point): label for point, label in zip(label_points_rounded, labels)}
-
-    #     # 根据点云中的点顺序重新排序标签
-    #     reordered_labels = []
-    #     for idx, point in enumerate(pcd_points_rounded):
-            
-    #         point_tuple = tuple(point)
-    #         if point_tuple in label_dict:
-    #             reordered_labels.append(label_dict[point_tuple])
-    #         else:
-    #             # 这里因为四舍五入的原因，会有一些稍微的偏差导致个别点不能完全匹配
-    #             # print(label_path)
-    #             # print(point)
-    #             # print(pcd_points[idx])
-    #             # print(point in pcd_points_rounded)
-    #             # print(point in label_points_rounded)
-    #             # print("***label有问题****")
-    #             # with open('label_dict.txt', 'w') as file:
-    #             #     for key, value in label_dict.items():
-    #             #         file.write(f"{key}: {value}\n")
-    #             # # 保存数组到文本文件，使用普通的四舍五入保留八位小数
-    #             # np.savetxt(' pcd_points_rounded.txt', pcd_points_rounded, fmt='%.10f', delimiter=',')
-    #             # np.savetxt(' label_points_rounded.txt', label_points_rounded, fmt='%.10f', delimiter=',')
-    #             distances = np.linalg.norm(label_points_rounded - point, axis=1)
-    #             closest_index = np.argmin(distances)
-    #             closest_label = labels[closest_index]
-
-    #             reordered_labels.append(closest_label)
-    #             # print(closest_label)
-            
-    #             # print("当前点:", point)
-    #             # print("最近点:", label_points_rounded[closest_index])
-    #     return np.array(reordered_labels)
-    
     def _reorder_labels(self, label_path: str, pcd_points_rot: np.ndarray) -> np.ndarray:
         if pcd_points_rot.size == 0:
             return np.array([], dtype=np.float32)
