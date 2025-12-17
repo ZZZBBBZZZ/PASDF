@@ -5,7 +5,7 @@ Bozhong Zheng<sup>1</sup><sup>\*</sup>, Jinye Gan<sup>1</sup><sup>\*</sup>, Xiao
 
 <sup>1</sup>ShanghaiTech University &nbsp;&nbsp; <sup>2</sup>University of Michigan, Ann Arbor  
 
-<sup>\*</sup>Equal contribution. &nbsp; <sup>‡</sup>Corresponding authors. &nbsp; <sup>†</sup>Co-corresponding author.
+<sup>\*</sup>Equal contribution. &nbsp;  <sup>†</sup>corresponding author.
 
 
 ---
