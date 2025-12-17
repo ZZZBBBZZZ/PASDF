@@ -1,7 +1,11 @@
 
 
 # 📘 [PASDF: Bridging 3D Anomaly Localization and Repair via High-Quality Continuous Geometric Representation](https://arxiv.org/abs/2505.24431)
+Bozhong Zheng<sup>1</sup><sup>\*</sup>, Jinye Gan<sup>1</sup><sup>\*</sup>, Xiaohao Xu<sup>2</sup><sup>†</sup>, Xintao Chen<sup>1</sup>,  Wenqiao Li<sup>1</sup>, Xiaonan Huang<sup>2</sup>, Na Ni<sup>1</sup><sup>†</sup>, Yingna Wu<sup>1</sup><sup>†</sup>  
 
+<sup>1</sup>ShanghaiTech University &nbsp;&nbsp; <sup>2</sup>University of Michigan, Ann Arbor  
+
+<sup>\*</sup>Equal contribution. &nbsp; <sup>‡</sup>Corresponding authors. &nbsp; <sup>†</sup>Co-corresponding author.
 
 
 ---
